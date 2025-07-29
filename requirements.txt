@@ -1,0 +1,8 @@
+flask
+flask-cors
+python-dotenv
+OpenAI
+typhoon-ocr
+PyMuPDF
+sentence-transformers
+psycopg2-binary
