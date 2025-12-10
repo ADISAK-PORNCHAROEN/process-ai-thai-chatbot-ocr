@@ -5,6 +5,7 @@ import os
 from dotenv import load_dotenv
 from typhoon_ocr import prepare_ocr_messages
 import json
+import time
 
 load_dotenv()
 
@@ -40,6 +41,8 @@ def query_documents(query, k=5):
     return results
 
 def generate_response(query_text):
+    start = time.time()
+
     retrievend_docs = query_documents(query_text, 5)
     
     context = "\n".join([doc[0] for doc in retrievend_docs])
@@ -60,7 +63,10 @@ def generate_response(query_text):
         temperature=0.6,
         top_p=0.95,
     )
-    
+
+    end = time.time()
+    print(f"Time taken: {end - start:.2f} seconds")
+
     return response.choices[0].message.content
 
 # print(response.choices[0].message.content)
