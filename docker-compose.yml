@@ -5,20 +5,16 @@ services:
     ports:
       - "5000:5000"
     environment:
-      # --- AI & Typhoon Settings ---
       - TYPHOON_BASE_URL=${TYPHOON_BASE_URL}
       - TYPHOON_API_KEY=${TYPHOON_API_KEY}
       - TYPHOON_OCR_MODEL=${TYPHOON_OCR_MODEL}
       - TYPHOON_MODEL=${TYPHOON_MODEL}
       - SECRET_KEY=${SECRET_KEY}
-
-      # --- Database Settings ---
-      - DB_HOST=${DB_HOST}
+      - DB_HOST=archon-db 
       - DB_NAME=${DB_NAME}
       - DB_USER=${DB_USER}
       - DB_PASSWORD=${DB_PASSWORD}
       - DB_PORT=${DB_PORT:-5432}
-      
       - PYTHONUTF8=1
     networks:
       - postgres_archon-network
