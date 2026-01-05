@@ -21,9 +21,9 @@ services:
       
       - PYTHONUTF8=1
     networks:
-      - archon-network
+      - postgres_archon-network
     restart: always
 
 networks:
-  archon-network:
+  postgres_archon-network:
     external: true
