@@ -59,7 +59,7 @@ def generate_response(query_text):
             {"role": "system", "content": "คุณชื่อ Typhoon เป็นผู้ช่วยที่เป็นมิตรและให้ข้อมูลที่เป็นประโยชน์แก่ผู้ใช้ คุณจะตอบคำถามเป็นภาษาไทยที่สุภาพและเข้าใจง่าย"},
             {"role": "user", "content": prompt}
         ],
-        max_tokens=512,
+        max_tokens=2048,
         temperature=0.6,
         top_p=0.95,
     )
